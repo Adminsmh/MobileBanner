@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit" />
+    <title></title>
+    <link href="https://www.sammh.com/css/reset.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+    <style>
+        @keyframes scrollBad {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 100% 0;
+            }
+        }
+
+        #smh_banner {
+            overflow: hidden;
+            margin: 0px auto;
+            position: relative;
+        }
+
+            #smh_banner ul {
+                overflow: hidden;
+                margin: 0px auto;
+                position: relative;
+            }
+
+        .bg {
+            width: 100vw;
+            height: 40vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            float: left;
+        }
+
+        .pagination {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            left: 0;
+            bottom: 10px;
+            z-index: 999;
+        }
+        .pagination span {
+            cursor: pointer;
+            width: 8px;
+            height: 8px;
+            background: #ccc;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 10px;
+        }
+        .pagination span:last-child {
+            margin-right: 0px;
+        }
+
+        .active {
+            background: #4C70B1 !important;
+        }
+        #smh_banner:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: rgba(0,0,0,.58);
+            width: 100%;
+            height: 100%;
+            z-index: 50;
+        }
+        #smh_banner:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 51;
+            background-image: url(img/sh.png);
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-size: 70% auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="smh_banner">
+        <ul>
+            <li class="bg" style="background-image:url(img/smh1.jpg)"></li>
+            <li class="bg" style="background-image:url(img/smh2.jpg)"></li>
+            <li class="bg" style="background-image:url(img/smh3.jpg)"></li>
+            <li class="bg" style="background-image:url(img/smh4.jpg)"></li>
+        </ul>
+        <div class="pagination"></div>
+    </div>
+    <script src="js/Jquery.MobileBanner.min.js"></script>
+    <script>
+        var obj = {time: 6000,animation:"7s" };//参数
+        MobileBanner(obj).init();//调用函数
+    </script>
+</body>
+</html>
